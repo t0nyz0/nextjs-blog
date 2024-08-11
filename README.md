@@ -22,7 +22,14 @@ This template goes beyond a generic Nextra setup by including:
 - **Built-In Project Examples**: Pre-made project pages to help you quickly showcase your work.
 - **Built-In SEO Optimization**: Pre-configured meta tags and settings to boost your blog's visibility in search engines.
 
-## 🛠️ Getting Started
+## 🛠️ Getting Started (Easy)
+
+### [Deploy your website right now 🚀](https://vercel.com/new/t0nyz0s-projects/clone?demo-description=Simple%2C+powerful+and+flexible+markdown-powered+docs+site.+Built+with+Next.js.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5RZetTd7rd1mQtoZt2fajA%2F747eabb89b6378ecfc0ef433f5e47a01%2FCleanShot_2022-12-02_at_12.07.44.png&demo-title=Nextra%3A+Docs+Starter+Kit&demo-url=https%3A%2F%2Fnextra-docs-template.vercel.app%2F&from=templates&project-name=Nextra%3A+Docs+Starter+Kit&repository-name=nextjs-blog&repository-url=https%3A%2F%2Fgithub.com%2Ft0nyz0%2Fnextjs-blog)
+
+
+
+
+## Getting Started (Old fashioned way)
 
 1. **Clone the Repository**:
    ```cpp
