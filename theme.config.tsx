@@ -32,7 +32,7 @@ const config: DocsThemeConfig = {
   },
   head: (
     <>
-    <title>t0nyz</title>
+    <title>Modern Nextjs Blog</title>
     <link
       rel="shortcut icon"
       type="image/x-icon"
