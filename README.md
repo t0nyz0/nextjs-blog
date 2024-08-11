@@ -51,3 +51,17 @@ This template goes beyond a generic Nextra setup by including:
 
 2. Install Dependencies:
 
+Make sure you have Node.js installed. If not, download and install [Node.js](https://nodejs.org/).
+
+Then, install the project dependencies by running:
+
+```jc cp 
+npm install
+```
+
+3. Start the development server to see your project in action:
+
+```jc cp 
+npm run dev
+```
+>>>>>>> Stashed changes
