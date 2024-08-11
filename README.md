@@ -43,3 +43,11 @@ This template goes beyond a generic Nextra setup by including:
    ```ccp 
    npm run dev
    ```
+=======
+   ```bash
+   git clone https://github.com/t0nyz0/nextjs-blog.git
+   cd nextjs-blog
+```
+
+2. Install Dependencies:
+
