@@ -1,0 +1,51 @@
+---
+title: Example Project - Smart Home Automation
+description: A comprehensive smart home automation system integrating IoT devices with a centralized control hub.
+keywords: smart home, IoT, automation, home automation, ESP32, MQTT, Node-RED, project
+---
+
+import Image from 'next/image'
+
+# 🏠 Example Project 2 - Smart Home Automation
+
+<div style={{ marginTop: '20px', textAlign: 'center' }}>
+  <Image
+    src="/images/dog.jpg"
+    alt="Smart Home Automation"
+    width={600}
+    height={400}
+    style={{
+      borderRadius: '10px',
+      objectFit: 'cover',
+      border: '3px solid #ccc',
+    }}
+  />
+</div>
+
+## 📝 Overview
+
+The **Smart Home Automation** project aims to create a fully integrated system for managing various IoT devices within a home environment. The system uses an ESP32 microcontroller as the central hub, connected to sensors, lights, and other devices via MQTT and controlled through a Node-RED dashboard.
+
+This project enhances convenience, security, and energy efficiency by allowing users to monitor and control their home remotely.
+
+### 🔧 Features
+
+- **🧠 Centralized Control Hub:** An ESP32-based microcontroller acting as the brain of the system.
+- **📊 Real-Time Monitoring:** Sensor data (temperature, humidity, motion) is continuously monitored.
+- **🌐 Remote Access:** Control lights, appliances, and security systems from anywhere via a mobile app.
+- **💡 Energy Efficiency:** Automated routines for turning off unused devices and adjusting thermostats.
+- **🔄 Scalability:** Easily add more devices and sensors to the system.
+
+<div style={{ marginTop: '20px' }}></div>
+
+## 🏗️ Architecture
+
+```mermaid
+graph LR
+    A[User] -->|Mobile App| B[Node-RED]
+    B --> C[ESP32]
+    C --> D1[Light Control]
+    C --> D2[Temperature Sensor]
+    C --> D3[Security Camera]
+    C --> D4[Motion Sensor]
+    C --> D5[Smart Plug]

@@ -1,0 +1,58 @@
+---
+title: Weather Station
+description: A real-time weather station using ESP32 and various environmental sensors, with data displayed on a custom web dashboard.
+keywords: weather station, ESP32, IoT, sensors, web dashboard, project, data logging, environmental monitoring
+---
+
+import Image from 'next/image'
+
+# 🌦️ Weather Station
+
+<div style={{ marginTop: '20px', textAlign: 'center' }}>
+  <Image
+    src="/images/dog.jpg"
+    alt="Weather Station"
+    width={600}
+    height={400}
+    style={{
+      borderRadius: '10px',
+      objectFit: 'cover',
+      border: '3px solid #ccc',
+    }}
+  />
+</div>
+
+## 📋 Project Overview
+
+The **Weather Station** project is designed to monitor and log environmental data such as temperature, humidity, atmospheric pressure, and light levels. It uses an ESP32 microcontroller connected to a range of sensors, with the data being displayed on a web dashboard.
+
+The project serves as an educational tool, a personal weather station, or a part of a larger IoT ecosystem, providing real-time insights into the local environment.
+
+### 🔑 Key Features
+
+- **Real-Time Monitoring**: Continuous tracking of environmental data.
+- **Web Dashboard**: A responsive web interface for viewing data in real-time.
+- **Data Logging**: Historical data is stored and visualized over time.
+- **Alert System**: Configurable alerts for extreme weather conditions.
+- **Wireless Connectivity**: Data is transmitted via Wi-Fi to the dashboard.
+
+<div style={{ marginTop: '20px' }}></div>
+
+## 🛠️ Components Used
+
+- **ESP32**: The main microcontroller, responsible for gathering data and sending it to the web dashboard.
+- **DHT22 Sensor**: For temperature and humidity measurement.
+- **BMP280 Sensor**: For atmospheric pressure measurement.
+- **BH1750 Sensor**: For light level detection.
+- **Web Server**: Hosted on the ESP32 to serve the dashboard interface.
+
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD;
+    A[ESP32] -->|DHT22| B[Temperature & Humidity]
+    A -->|BMP280| C[Atmospheric Pressure]
+    A -->|BH1750| D[Light Level]
+    A --> E[Web Server]
+    E --> F[User Dashboard]

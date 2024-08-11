@@ -1,0 +1,17 @@
+{
+  "index": {
+    "title": "Introduction",
+    "theme": {
+      "toc": false
+    }
+  },
+  "projects": {
+    "title": "Projects"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "mailto:tonyz@outlook.com",
+    "newWindow": true
+  }
+}
