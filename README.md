@@ -2,6 +2,8 @@
 
 Welcome to the **Next.js Blog Template** – a fast, modern, and fully customizable blogging platform. This template is designed to be simple, clean, and free of unnecessary clutter, allowing you to focus on your content while benefiting from the latest web technologies.
 
+This is the same template used for t0nyz.com
+
 ## 🌟 Key Features
 
 - **⚡ Fast**: Powered by Next.js, ensuring your blog loads quickly and performs well across all devices.
