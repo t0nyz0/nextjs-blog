@@ -24,4 +24,4 @@ Welcome to the **Next.js Blog Template** – a fast, modern, and fully customiza
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/t0nyz/nextjs-blog.git
-   cd nextjs-blog-template
+   cd nextjs-blog
