@@ -7,7 +7,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/t0nyz0',
   },
   footer: {
-    text: 'Nextjs Blog',
+    content: 'Nextjs Blog',
   },
   editLink: {
     component: null
@@ -21,12 +21,6 @@ const config: DocsThemeConfig = {
     content: ''
   },
   sidebar: {
-    titleComponent({ title, type }) {
-      if (type === 'separator') {
-        return <span className="cursor-default">{title}</span>
-      }
-      return <>{title}</>
-    },
     defaultMenuCollapseLevel: 2,
     toggleButton: true
   },
