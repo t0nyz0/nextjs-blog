@@ -1,4 +1,5 @@
 import withNextra from 'nextra';
+import { fileURLToPath } from 'node:url';
 
 const themeConfig = './theme.config.tsx';
 
@@ -7,4 +8,6 @@ const config = withNextra({
   themeConfig,
 });
 
-export default config;
+export default config({
+  outputFileTracingRoot: fileURLToPath(new URL('.', import.meta.url)),
+});
