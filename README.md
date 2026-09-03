@@ -39,14 +39,45 @@ This template goes beyond a generic Nextra setup by including:
 
 2. **Install Dependencies:**
 
-   Make sure you have Node.js installed. If not, download and install [Node.js](https://nodejs.org/).
+   Use Node.js 22.12+ (22.x) or Node.js 24.x. The runtime is selected by your
+   development/deployment environment, not installed as an application dependency.
 
    Then, install the project dependencies by running:
    ```cpp 
-   npm install
+   npm ci
    ```
 
 3. Start the development server to see your project in action:
    ```ccp 
    npm run dev
    ```
+
+## Dependency security and verification
+
+The blog stays on the patched Next.js 15 line to preserve its Nextra 3 / Pages
+Router setup. Both npm and pnpm lockfiles are maintained; keep them in sync when
+updating dependencies:
+
+```sh
+npm update
+pnpm import
+npm audit
+pnpm audit
+npm run build
+npm run typecheck
+```
+
+For a clean pnpm checkout, use `pnpm install --frozen-lockfile`, then
+`pnpm build` and `pnpm typecheck`. Do not switch package managers in an existing
+`node_modules` directory; verify each in a separate clean checkout.
+
+The matching `overrides` and `pnpm.overrides` entries in `package.json` force
+patched PostCSS and XML DOM releases where upstream dependencies pin older
+versions. Keep both override sections identical. Revisit these overrides when
+upstream packages adopt the fixed versions, and run both audits before removing
+them.
+
+After updates, check `/`, `/about`, `/projects`, `/projects/project1`, and
+`/projects/project2` in the browser, including search, theme switching, optimized
+images, and the two Mermaid diagrams. Dependency audits check known advisories;
+they are not a full security audit of application code.
