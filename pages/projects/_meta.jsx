@@ -1,6 +1,0 @@
-const meta = {
-  project1: "Project example 1",
-  project2: "Project example 2",
-};
-
-export default meta;

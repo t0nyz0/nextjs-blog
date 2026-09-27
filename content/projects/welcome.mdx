@@ -1,0 +1,45 @@
+---
+title: Welcome to your new blog
+description: What this template gives you, where everything lives and how to make it yours in a few minutes.
+date: 2026-09-26
+tag: Getting started
+image: /images/covers/welcome.jpg
+keywords: next.js, nextra, blog template, mdx
+---
+
+# Welcome to your new blog
+
+![A browser window with a blinking cursor](/images/covers/welcome.jpg)
+
+This site is a starting point: a fast, clean blog built with Next.js and MDX that you can make your own in a few minutes. Everything here, including this post, is sample content meant to be edited or deleted.
+
+## What you get
+
+- **Posts in MDX.** Write Markdown, and drop in a React component when you need something interactive.
+- **A homepage that builds itself.** Your newest post is featured and the rest line up as cards, sorted by date.
+- **Search built in.** Every page is indexed at build time with Pagefind. There's no service to sign up for.
+- **Dark mode**, a table of contents on longer posts, and code blocks with syntax highlighting and a copy button.
+- **SEO basics handled.** Page titles, descriptions, social cards, a sitemap, `robots.txt` and an RSS feed are generated for you.
+- **Free hosting.** Push to GitHub and Vercel builds and deploys every change.
+
+## Make it yours
+
+1. Open `site.config.ts` and change the title, your name, tagline, links and accent color.
+2. Replace `public/images/avatar.svg` with a photo of yourself, and swap the favicons in `public/`.
+3. Edit the homepage in `content/index.mdx` and the About page in `content/about.mdx`.
+4. Delete the sample posts in `content/projects` and write your own. [Writing posts](/projects/writing-posts) covers the details.
+
+## Where things live
+
+| Path | What it is |
+| --- | --- |
+| `content/` | Every page on the site, as MDX |
+| `content/projects/` | Your posts |
+| `site.config.ts` | Name, links, colors and analytics |
+| `components/` | The homepage building blocks and other React components |
+| `app/` | Routing, the layout, sitemap, `robots.txt` and the RSS feed |
+| `public/` | Images and icons, served from the site root |
+
+## Deploy
+
+Push the repo to GitHub, import it at [vercel.com/new](https://vercel.com/new), and every push to `main` goes live. Once you have your own domain, set `NEXT_PUBLIC_SITE_URL` to it in your Vercel project so the sitemap and RSS feed link to the right place.

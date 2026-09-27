@@ -1,0 +1,42 @@
+---
+title: Weather Station
+description: A real-time weather station built on an ESP32 and a handful of environmental sensors, with the data on a custom web dashboard.
+date: 2026-08-11
+tag: Hardware
+image: /images/covers/weather-station.jpg
+keywords: weather station, ESP32, IoT, sensors, web dashboard, data logging
+---
+
+# Weather Station
+
+![Line drawing of a sun behind a cloud](/images/covers/weather-station.jpg)
+
+This project monitors and logs temperature, humidity, air pressure and light levels. An ESP32 reads a few sensors and serves the readings on a small web dashboard, so you can check conditions from any browser on the network.
+
+It works as a personal weather station, a learning project, or one piece of a larger home IoT setup.
+
+## Features
+
+- **Real-time readings**: sensor values refresh continuously on the dashboard.
+- **Web dashboard**: a responsive page served straight from the ESP32.
+- **Data logging**: readings are stored and charted over time.
+- **Alerts**: configurable thresholds for extreme conditions.
+- **Wi-Fi**: no cables beyond power.
+
+## Components
+
+- **ESP32**: reads the sensors and hosts the dashboard
+- **DHT22**: temperature and humidity
+- **BMP280**: barometric pressure
+- **BH1750**: light level
+
+## How it fits together
+
+```mermaid
+graph TD
+  A[ESP32] -->|DHT22| B[Temperature and humidity]
+  A -->|BMP280| C[Air pressure]
+  A -->|BH1750| D[Light level]
+  A --> E[Web server]
+  E --> F[Dashboard]
+```

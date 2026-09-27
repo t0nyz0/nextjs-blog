@@ -1,0 +1,149 @@
+/* Global styles. Keep this small: page- and component-specific styling lives in CSS modules. */
+
+/* Design tokens (light), overridden for dark below. The accent follows `accent` in site.config.ts. */
+:root {
+  --site-accent: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) var(--nextra-primary-lightness));
+  --site-accent-border: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) var(--nextra-primary-lightness) / 0.55);
+  --site-muted: rgb(17 17 17 / 0.66);
+  --site-subtle: rgb(17 17 17 / 0.52);
+  --site-border: rgb(17 17 17 / 0.1);
+  --site-border-strong: rgb(17 17 17 / 0.18);
+  --site-card: rgb(17 17 17 / 0.015);
+  --site-card-hover: rgb(17 17 17 / 0.04);
+  --site-thumb: rgb(17 17 17 / 0.05);
+  --site-heading: #0f172a;
+  --site-title-from: #0b0b0c;
+  --site-title-to: rgb(11 11 12 / 0.72);
+  --site-primary-bg: #111113;
+  --site-primary-fg: #fff;
+  --site-glow: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 60% / 0.16);
+  --site-glow-soft: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 60% / 0.1);
+  --site-dot: rgb(17 17 17 / 0.13);
+  --site-tag-bg: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) var(--nextra-primary-lightness) / 0.1);
+}
+html.dark {
+  --site-muted: rgb(255 255 255 / 0.66);
+  --site-subtle: rgb(255 255 255 / 0.5);
+  --site-border: rgb(255 255 255 / 0.1);
+  --site-border-strong: rgb(255 255 255 / 0.2);
+  --site-card: rgb(255 255 255 / 0.025);
+  --site-card-hover: rgb(255 255 255 / 0.05);
+  --site-thumb: rgb(255 255 255 / 0.05);
+  --site-heading: #f1f5f9;
+  --site-title-from: #fff;
+  --site-title-to: rgb(255 255 255 / 0.62);
+  --site-primary-bg: #f4f4f5;
+  --site-primary-fg: #111113;
+  --site-glow: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 60% / 0.14);
+  --site-glow-soft: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) 60% / 0.09);
+  --site-dot: rgb(255 255 255 / 0.09);
+  --site-tag-bg: hsl(var(--nextra-primary-hue) var(--nextra-primary-saturation) var(--nextra-primary-lightness) / 0.14);
+}
+
+/* Typeface: Geist, self-hosted by next/font in app/layout.tsx (sets --font-geist on <html>). */
+:root,
+:root body {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+/* Slightly tighter headings */
+article h1,
+article h2,
+article h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Breathing room above Mermaid diagrams */
+main div:has(> svg[aria-roledescription]) {
+  margin-top: 1.5em;
+}
+
+/* Navbar wordmark */
+.site-logo {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.03em;
+}
+
+/* "Sep 26, 2026 · 3 min read" under post titles (components/PostMeta.tsx) */
+.site-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.7rem;
+  font-size: 0.93rem;
+  color: var(--site-muted);
+}
+.site-post-meta-dot {
+  opacity: 0.6;
+}
+
+/* Site footer (components/SiteFooter.tsx) */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  color: var(--site-muted);
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.site-footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--site-accent);
+}
+
+/* Round portrait on the About page */
+.about-photo {
+  display: block;
+  margin-top: 1.5rem;
+  border-radius: 9999px;
+  border: 1px solid var(--site-border-strong);
+  object-fit: cover;
+}
+
+/* 404 page (app/not-found.tsx) */
+.site-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: calc(100dvh - var(--nextra-navbar-height));
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+.site-not-found .site-not-found-code {
+  font-size: 0.85rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  color: var(--site-accent);
+}
+.site-not-found h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.site-not-found p {
+  color: var(--site-muted);
+}
+.site-not-found a {
+  margin-top: 0.5rem;
+  color: var(--site-accent);
+  font-weight: 550;
+  text-decoration: none;
+}
+.site-not-found a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

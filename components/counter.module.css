@@ -1,0 +1,16 @@
+.counter {
+  margin-top: 1.25em;
+  height: 2.25rem;
+  padding: 0 1rem;
+  border: 1px solid var(--site-border-strong);
+  border-radius: 9999px;
+  background: var(--site-card);
+  font-size: 0.92rem;
+  font-weight: 550;
+  font-variant-numeric: tabular-nums;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.counter:hover {
+  border-color: var(--site-accent-border);
+  color: var(--site-accent);
+}

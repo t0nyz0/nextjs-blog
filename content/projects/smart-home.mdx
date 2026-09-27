@@ -1,0 +1,37 @@
+---
+title: Smart Home Automation
+description: An ESP32 hub that ties lights, sensors and plugs together over MQTT, with a Node-RED dashboard for control from anywhere.
+date: 2026-07-02
+tag: IoT
+image: /images/covers/smart-home.jpg
+keywords: smart home, IoT, home automation, ESP32, MQTT, Node-RED
+---
+
+# Smart Home Automation
+
+![Line drawing of a house connected to small devices](/images/covers/smart-home.jpg)
+
+This project brings the connected devices around a house under one roof. An ESP32 acts as the hub, talking to lights, sensors and smart plugs over MQTT, and a Node-RED dashboard lets you watch and control everything from a phone.
+
+The goal is convenience, a little extra security, and lower energy bills from routines that switch off what nobody is using.
+
+## Features
+
+- **Central hub**: one ESP32 coordinates every device.
+- **Live monitoring**: temperature, humidity and motion readings as they happen.
+- **Remote control**: lights, plugs and the camera from anywhere, through the dashboard.
+- **Energy routines**: automations turn off idle devices and adjust the thermostat.
+- **Easy to extend**: new devices only need to publish to an MQTT topic.
+
+## How it fits together
+
+```mermaid
+graph LR
+  A[You] -->|Phone| B[Node-RED]
+  B --> C[ESP32 hub]
+  C --> D1[Lights]
+  C --> D2[Temperature sensor]
+  C --> D3[Security camera]
+  C --> D4[Motion sensor]
+  C --> D5[Smart plug]
+```

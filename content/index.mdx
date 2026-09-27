@@ -1,0 +1,31 @@
+---
+title: Home
+searchable: false
+---
+
+import { HomeLayout, Hero, Section, ProjectGrid, CallToAction } from '../components/Home'
+
+{/* The homepage. The hero reads your name, tagline and links from site.config.ts. */}
+
+<HomeLayout>
+
+<Hero />
+
+<Section title="Latest projects" href="/projects" linkText="All projects">
+  <ProjectGrid featured limit={4} />
+</Section>
+
+<Section title="Goals for this year" variant="goals">
+
+- [x] Launch my blog
+- [x] Write about something I built
+- [ ] Publish one post a month
+- [ ] Open-source a side project
+
+</Section>
+
+<CallToAction eyebrow="Open source" title="Make this blog your own" href="https://github.com/t0nyz0/nextjs-blog" label="View on GitHub" icon="github">
+  Fork the template, edit `site.config.ts` and start writing in `content/`.
+</CallToAction>
+
+</HomeLayout>
