@@ -1,62 +1,117 @@
-# 🚀 Modern, Flexible, and Powerful Development Blog in Next.js in Minutes
+# Next.js Blog Template
 
-Welcome to the **Next.js Blog Template** – a fast, modern, and fully customizable blogging platform. This template is designed to be simple, clean, and free of unnecessary clutter, allowing you to focus on your content while benefiting from the latest web technologies.
+A fast, clean blog you can make your own in a few minutes. Write posts in MDX, edit one config file, and deploy for free on Vercel.
 
-This template powers [t0nyz.com](https://t0nyz.com), so you can see it in action firsthand.
+Built with **Next.js 16** (App Router) and **Nextra 4**. It started as the base for [t0nyz.com](https://t0nyz.com).
 
-## 🌟 Key Features
+![The homepage in dark mode: a hero with avatar and links, a featured post and a grid of post cards](.github/preview.jpg)
 
-- **⚡ Fast**: Powered by Next.js, ensuring your blog loads quickly and performs well across all devices.
-- **🖥️ Modern**: Built with Next.js, providing you with the latest features and best practices.
-- **🌐 Hosted Free**: Easily deploy your blog to platforms like Vercel or Netlify at no cost.
-- **🔄 CICD**: Seamless continuous integration and continuous deployment, so your changes go live instantly.
-- **🔍 SEO Built-In**: Optimized for search engines right out of the box, helping your content reach a wider audience.
-- **✨ Simple & Clean**: No unnecessary bloat – just the essentials for a beautiful, minimalistic blog.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Ft0nyz0%2Fnextjs-blog&project-name=nextjs-blog&repository-name=nextjs-blog)
 
-## Why should you use this template?
+## Features
 
-This template goes beyond a generic Nextra setup by including:
+- **A homepage that builds itself.** Hero, featured post, post cards, a goals checklist and a call to action. Your name, tagline, photo and links come from `site.config.ts`.
+- **Posts in MDX.** Markdown plus React components when you need them. Frontmatter sets the date, tag and cover image.
+- **Newest first, everywhere.** Posts are sorted by date on the homepage, the projects page, the sidebar and the RSS feed. No list to maintain.
+- **Reading time and dates** under every post title.
+- **Search built in.** [Pagefind](https://pagefind.app) indexes the site at build time. No service to sign up for.
+- **Dark mode**, a table of contents, syntax highlighting with copy buttons, Mermaid diagrams, GitHub-style callouts and image zoom.
+- **SEO handled.** Titles, descriptions, canonical URLs, Open Graph and Twitter cards, `sitemap.xml`, `robots.txt` and an RSS feed at `/feed.xml`.
+- **Fast by default.** Every page is static HTML. Images are optimized with `next/image` and the Geist font is self-hosted with `next/font`.
+- **Optional Google Analytics 4.** Add your measurement ID to `site.config.ts`.
 
-- **Built-In Favicon Example**: A ready-to-customize favicon setup, ensuring your blog has a unique and professional look.
-- **Built-In Google Analytics Example**: Easily track your blog's performance with Google Analytics.
-- **Built-In Project Examples**: Pre-made project pages to help you quickly showcase your work.
-- **Built-In SEO Optimization**: Pre-configured meta tags and settings to boost your blog's visibility in search engines.
+## Getting started
 
-## 🛠️ Getting Started (Easy)
+### Deploy it
 
-### [Deploy your website right now 🚀](https://vercel.com/new/t0nyz0s-projects/clone?demo-description=Simple%2C+powerful+and+flexible+markdown-powered+docs+site.+Built+with+Next.js.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F5RZetTd7rd1mQtoZt2fajA%2F747eabb89b6378ecfc0ef433f5e47a01%2FCleanShot_2022-12-02_at_12.07.44.png&demo-title=Nextra%3A+Docs+Starter+Kit&demo-url=https%3A%2F%2Fnextra-docs-template.vercel.app%2F&from=templates&project-name=Nextra%3A+Docs+Starter+Kit&repository-name=nextjs-blog&repository-url=https%3A%2F%2Fgithub.com%2Ft0nyz0%2Fnextjs-blog)
+Click **Deploy with Vercel** above. Vercel copies the repo to your GitHub account and deploys it. Every push to `main` after that goes live automatically.
 
+### Run it locally
 
+Use Node.js 22.12+ or 24.x.
 
+```sh
+git clone https://github.com/t0nyz0/nextjs-blog.git
+cd nextjs-blog
+npm install
+npm run dev
+```
 
-## Getting Started (Old fashioned way)
+Open [http://localhost:3000](http://localhost:3000). Pages reload as you edit. Search needs the index that a production build generates, so try it with `npm run build && npm start`.
 
-1. **Clone the Repository**:
-   ```cpp
-   git clone https://github.com/t0nyz0/nextjs-blog.git
-   cd nextjs-blog
-   ```
+## Make it yours
 
-2. **Install Dependencies:**
+1. **`site.config.ts`**: your site title, name, tagline, links, repo, accent color and (optionally) Google Analytics ID.
+2. **`public/images/avatar.svg`**: replace it with a photo of yourself and point `avatar` in `site.config.ts` at it. Swap the favicons in `public/` too.
+3. **`content/index.mdx`**: the homepage. Rearrange the sections, change the goals, or edit the call to action.
+4. **`content/about.mdx`**: your About page.
+5. **`content/projects/`**: delete the sample posts and write your own.
+6. **`NEXT_PUBLIC_SITE_URL`**: once you have a custom domain, set this environment variable in Vercel (e.g. `https://example.com`) so canonical links, the sitemap and the RSS feed use it. Until then the Vercel production URL is used.
 
-   Use Node.js 22.12+ (22.x) or Node.js 24.x. The runtime is selected by your
-   development/deployment environment, not installed as an application dependency.
+## Writing posts
 
-   Then, install the project dependencies by running:
-   ```cpp 
-   npm ci
-   ```
+Add an `.mdx` file to `content/projects`. The file name becomes the URL: `content/projects/my-first-post.mdx` is published at `/projects/my-first-post`.
 
-3. Start the development server to see your project in action:
-   ```ccp 
-   npm run dev
-   ```
+```yaml
+---
+title: My first post
+description: One or two sentences for the card, search engines and the RSS feed.
+date: 2026-09-26
+tag: Notes
+image: /images/my-first-post/cover.jpg
+---
 
-## Dependency security and verification
+# My first post
 
-The blog stays on the patched Next.js 15 line to preserve its Nextra 3 / Pages
-Router setup. Both npm and pnpm lockfiles are maintained; keep them in sync when
-updating dependencies:
+Write your post here.
+```
+
+| Field | What it does |
+| --- | --- |
+| `title` | Page title, browser tab, search results and cards |
+| `description` | Card blurb, meta description and RSS summary |
+| `date` | Publish date (`YYYY-MM-DD`). Sorts posts and shows under the title with the reading time |
+| `updated` | Optional. Adds "Updated …" after the date |
+| `tag` | Optional. The small label on cards |
+| `image` | Optional. Card thumbnail and social share image. Use a JPG or PNG, ideally 16:10 |
+| `draft: true` | Keeps a post off the homepage, the projects page and the RSS feed |
+| `display: hidden` | Also hides it from the sidebar. The URL still works |
+| `searchable: false` | Leaves the page out of site search |
+
+Start each post with a `# Title` heading; the date and reading time appear right under it. Images go in `public/images` and are referenced from the site root (`![Alt text](/images/photo.jpg)`). The sample post [Writing posts](content/projects/writing-posts.mdx) shows code blocks, callouts, diagrams and interactive components.
+
+You can organize posts into subfolders (e.g. `content/projects/2026/`); they're still listed newest first.
+
+## Project structure
+
+```
+app/
+  [[...mdxPath]]/page.tsx   renders every MDX page, adds post dates and SEO tags
+  layout.tsx                navbar, footer, search, fonts and theme
+  feed.xml/route.ts         RSS feed
+  sitemap.ts, robots.ts, manifest.ts, not-found.tsx
+components/
+  Home.tsx                  homepage building blocks (Hero, Section, ProjectGrid, CallToAction)
+  PostMeta.tsx              "Sep 26, 2026 · 3 min read" under post titles
+content/                    every page on the site, as MDX; _meta.ts files set navigation
+lib/                        post listing and date helpers
+public/                     images, favicons (served from the site root)
+styles/globals.css          design tokens and a few global styles
+site.config.ts              everything personal about the site
+```
+
+## Scripts
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Local development server at http://localhost:3000 |
+| `npm run build` | Production build, then builds the search index into `public/_pagefind` |
+| `npm start` | Serves the production build |
+| `npm run typecheck` | Generates route types and runs the TypeScript compiler |
+
+## Updating dependencies
+
+Both npm and pnpm lockfiles are maintained. After updating, refresh the pnpm lockfile from npm's and check both:
 
 ```sh
 npm update
@@ -67,17 +122,15 @@ npm run build
 npm run typecheck
 ```
 
-For a clean pnpm checkout, use `pnpm install --frozen-lockfile`, then
-`pnpm build` and `pnpm typecheck`. Do not switch package managers in an existing
-`node_modules` directory; verify each in a separate clean checkout.
+For a clean pnpm checkout, use `pnpm install --frozen-lockfile`, then `pnpm build` and `pnpm typecheck`. Don't switch package managers inside an existing `node_modules`; verify each one in a separate clean checkout.
 
-The matching `overrides` and `pnpm.overrides` entries in `package.json` force
-patched PostCSS and XML DOM releases where upstream dependencies pin older
-versions. Keep both override sections identical. Revisit these overrides when
-upstream packages adopt the fixed versions, and run both audits before removing
-them.
+The `overrides` and `pnpm.overrides` sections in `package.json` must stay identical. They exist for two reasons:
 
-After updates, check `/`, `/about`, `/projects`, `/projects/project1`, and
-`/projects/project2` in the browser, including search, theme switching, optimized
-images, and the two Mermaid diagrams. Dependency audits check known advisories;
-they are not a full security audit of application code.
+- **`@xmldom/xmldom`**: forces a patched release under Nextra's math dependencies, which pin a vulnerable version. Remove it once `npm audit` passes without it.
+- **`zod`**: pinned to 4.3.x because Nextra 4.6.1's layout validation fails with zod 4.4 and newer ("expected nonoptional, received undefined" while prerendering). Remove the pin once a Nextra release fixes it, and confirm `npm run build` still passes.
+
+After updating, check `/`, `/projects`, a post, `/about` and a missing page in the browser, in both light and dark mode, including search, the mobile menu, images and the Mermaid diagrams. Dependency audits check known advisories; they aren't a full security review of the site's code.
+
+## License
+
+[MIT](LICENSE). Icons are adapted from [Octicons](https://github.com/primer/octicons) (MIT) and drawn in the style of [Lucide](https://lucide.dev) (ISC). The sample cover illustrations are original to this template.
