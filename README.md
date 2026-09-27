@@ -129,6 +129,8 @@ The `overrides` and `pnpm.overrides` sections in `package.json` must stay identi
 - **`@xmldom/xmldom`**: forces a patched release under Nextra's math dependencies, which pin a vulnerable version. Remove it once `npm audit` passes without it.
 - **`zod`**: pinned to 4.3.x because Nextra 4.6.1's layout validation fails with zod 4.4 and newer ("expected nonoptional, received undefined" while prerendering). Remove the pin once a Nextra release fixes it, and confirm `npm run build` still passes.
 
+`next.config.mjs` also overrides Nextra's Turbopack alias for its Mermaid component. In Nextra 4.6.1 that alias doesn't resolve when pnpm installs packages under `node_modules/.pnpm` (Vercel uses pnpm when it finds `pnpm-lock.yaml`), which fails the build with "Can't resolve '@theguild/remark-mermaid/mermaid'". Remove the override once Nextra fixes it, and confirm a clean `pnpm install --frozen-lockfile && pnpm build` still passes.
+
 After updating, check `/`, `/projects`, a post, `/about` and a missing page in the browser, in both light and dark mode, including search, the mobile menu, images and the Mermaid diagrams. Dependency audits check known advisories; they aren't a full security review of the site's code.
 
 ## License
